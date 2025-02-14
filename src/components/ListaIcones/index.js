@@ -1,18 +1,25 @@
+import styled from "styled-components";
 import imagemPerfil from "../../images/perfil.svg";
 import imagemSacola from "../../images/sacola.svg";
-import "./styles.css"
 
-const headerIcones = [ imagemSacola, imagemPerfil];
+const headerIcones = [imagemSacola, imagemPerfil];
+const UlIcones = styled.ul`
+  display: flex;
+  gap: 1em;
+`
+const LiIcone = styled.li`
+  cursor: pointer;
+`
 
 function ListaIcones() {
   return (
-    <ul className="listaIcones">
+    <UlIcones>
       {headerIcones.map((icone) => (
-        <li className="listaIcones__item">
+        <LiIcone>
           <img src={icone} alt="Icones"></img>
-        </li>
+        </LiIcone>
       ))}
-    </ul>
+    </UlIcones>
   );
 }
 

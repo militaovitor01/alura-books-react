@@ -1,16 +1,27 @@
-import "./styles.css"
+import styled from "styled-components";
 
+const UlNavbar = styled.ul`
+  display: flex;
+  gap: 1em;
+`
+
+const ListaNavbarItens = styled.li`
+  font-size: 16px;
+  font-weight: 500;
+  height: 100%;
+  cursor: pointer;
+`
 const navbarItens = ["CATEGORIAS", "FAVORITOS", "MINHA ESTANTE"];
 
 function ListaNavbar () {
     return (
-        <ul className="listaNavbar">
+        <UlNavbar>
           {navbarItens.map((texto) => (
-            <li className="listaNavbar__itens">             
+            <ListaNavbarItens>             
               <p>{texto}</p>
-            </li>
+            </ListaNavbarItens>
           ))}
-        </ul>
+        </UlNavbar>
     )
 }
 

@@ -1,8 +1,0 @@
-.listaIcones {
-    display: flex;
-    gap: 1em;
-}
-
-.listaIcones__item {
-    cursor: pointer;
-}
