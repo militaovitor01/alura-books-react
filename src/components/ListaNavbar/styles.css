@@ -1,0 +1,11 @@
+.listaNavbar {
+    display: flex;
+    gap: 1em;
+}
+
+.listaNavbar__itens {
+    font-size: 16px;
+    font-weight: 500;
+    height: 100%;
+    cursor: pointer;   
+}
