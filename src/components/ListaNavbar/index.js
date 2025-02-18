@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const UlNavbar = styled.ul`
@@ -17,9 +18,11 @@ function ListaNavbar () {
     return (
         <UlNavbar>
           {navbarItens.map((texto) => (
-            <ListaNavbarItens>             
-              <p>{texto}</p>
-            </ListaNavbarItens>
+            <Link to={`/${texto.toLowerCase()}`}>
+              <ListaNavbarItens>             
+                <p>{texto}</p>
+              </ListaNavbarItens>
+            </Link>           
           ))}
         </UlNavbar>
     )

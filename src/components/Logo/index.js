@@ -9,6 +9,7 @@ const LogoContainer = styled.div`
 function Logo(){   
     return(
         <LogoContainer>
+          
           <img src={logo} alt="Logo AluraBooks"></img>
           <p><strong>Alura</strong>Books</p>
         </LogoContainer>
