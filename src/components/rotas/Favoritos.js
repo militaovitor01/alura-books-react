@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getFavoritos } from "../servicos/favoritos";
+import { deleteFavorito, getFavoritos } from "../servicos/favoritos";
 import livroImg from '../../images/livro.png'
 
 const AppContainer = styled.div`
@@ -55,6 +55,12 @@ function Favoritos() {
     fetchFavoritos();
   }, []);
 
+  async function deletarFavorito (id){
+    await deleteFavorito(id)
+    await fetchFavoritos()
+    alert(`Livro de ${id} deletado!`)
+  }
+
   return (
     <AppContainer>
       <div>
@@ -62,7 +68,7 @@ function Favoritos() {
         <ResultadoContainer>
           {favoritos.length !== 0
             ? favoritos.map((favorito) => (
-                <Resultado>
+                <Resultado onClick={()=> deletarFavorito(favorito.id)}>
                   <p>{favorito.nome}</p>
                   <img src={livroImg} />
                 </Resultado>
